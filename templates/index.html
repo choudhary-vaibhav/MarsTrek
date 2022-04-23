@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1> MarsTrek </h1>
+
+    <form action="/submit" method="post">
+
+        <select name="rover">
+            <option disabled selected value="">Rover</option>
+            {% for rover in rovers %} 
+                <option value="{{ rover }}">{{ rover }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="submit">
+    </form>
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    Request Succeeded!
+    <br>
+
+    {% if source!='' %}
+        <img src="{{ source }}" alt="Images from the Mars by the rover.">
+    {% else %} 
+        Picture Not Found!
+    {% endif %}
+{% endblock %}
