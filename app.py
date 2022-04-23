@@ -67,11 +67,11 @@ def submit1():
         return render_template("failure.html")
     
     sol = request.form.get("number")
-    print(sol)
+    #print(sol)
 
     r = requests.get(f'https://api.nasa.gov/mars-photos/api/v1/rovers/{rover_name}/photos?sol={sol}&camera={cam}&api_key=eeXCbwIsOSMtUqAvdHfQzKHaFR64E1iX5qsjQdsC')
 
-    print(r.ok)
+    #print(r.ok)
 
     with open('nasa_pic.json','w') as f:
         f.write(r.text)
@@ -87,6 +87,6 @@ def submit1():
             data = value['img_src']
             break
     
-    print(data)
+    #print(data)
     return render_template("success.html", source=data)
 
